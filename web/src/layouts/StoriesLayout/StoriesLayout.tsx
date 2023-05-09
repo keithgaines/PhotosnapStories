@@ -1,4 +1,5 @@
 import Header from "src/components/Navbar/Navbar";
+import Footer from "src/components/Footer/Footer";
 
 type StoryLayoutProps = {
   children?: React.ReactNode
@@ -10,7 +11,11 @@ const StoriesLayout = ({ children }: StoryLayoutProps) => {
       <header>
         <Header />
       </header>
-      <main>{children}</main>
+      <main>
+        {children}
+        <Footer />
+</main>
+
     </>
   );
 }

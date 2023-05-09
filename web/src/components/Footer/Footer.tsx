@@ -30,13 +30,6 @@ const Footer = () => {
           </a>
         </ul>
       </div>
-      <div className="footerinvite">
-        <h3>GET AN INVITE <div className="arrowimageinvert"><img src="./assets/shared/desktop/arrow.svg" alt="arrow" /></div>
-        </h3>
-      </div>
-      <br />
-      <br />
-
       <div className="copyright">
         <p>Copyright 2019. All Rights Reserved</p>
       </div>

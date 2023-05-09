@@ -192,10 +192,6 @@ p {
         flex-wrap: wrap;
     }
 
-    .image-wrapper {
-        max-width: 50%;
-    }
-
 }
 
 @media  screen and (min-width: 1024px) {
@@ -281,7 +277,4 @@ p {
         width: 33%;
     }
 
-    .image-wrapper {
-        max-width: 25%;
-    }
 }

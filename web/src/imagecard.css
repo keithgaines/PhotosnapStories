@@ -1,3 +1,9 @@
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
 .image-wrapper {
     display: flex;
     flex-direction: column;
@@ -56,3 +62,23 @@ hr {
     margin-left: 5vw;
     margin-right: 5vw;
 }
+
+@media screen and (min-width: 768px) {
+.images {
+    width: 100vw;
+}
+
+.image-wrapper {
+    max-width: 50%;
+}
+}
+
+@media screen and (min-width: 1024px) {
+    .images {
+        width: 100vw;
+    }
+    
+    .image-wrapper {
+        max-width: 25%;
+    }
+    }

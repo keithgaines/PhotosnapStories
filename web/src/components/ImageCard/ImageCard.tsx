@@ -26,7 +26,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
         <p className="image-story">READ STORY</p>
         <img
           className="image-arrow"
-          src="../assets/shared/desktop/arrow.svg"
+          src="/shared/desktop/arrow.svg"
           alt="arrow"
         />
       </div>
