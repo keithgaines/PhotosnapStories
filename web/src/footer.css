@@ -67,6 +67,8 @@
         text-align: left;
         align-items: left;
         justify-content: left;
+        padding-left: 15%;
+        padding-right: 15%;
     }
     .footerlogo {
         float: left;
@@ -75,9 +77,11 @@
     };
 
     .socialicons {
-        width: 40vw;
-        float: right;
+        width: 100vw;
+        float: left;
     }
+
+
 
     .footerlinks ul {
         display: flex;
@@ -86,6 +90,10 @@
 
     .footerlinks li {
         padding: 0 25px 0 25px;
+    }
+
+    .copyright {
+        float: right;
     }
 
 }
