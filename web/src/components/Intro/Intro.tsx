@@ -6,7 +6,7 @@ function Intro(props) {
   return (
     <div className="herocontainer">
       <div className="heroimage">
-        <img src={backgroundImage} alt="Hero Image" />
+        <img src={backgroundImage} />
       </div>
       <div className="herotext" style={{ backgroundColor: 'black', color: 'white' }}>
         <h1>{title}</h1>
