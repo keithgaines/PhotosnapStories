@@ -1,6 +1,6 @@
 import { render } from '@redwoodjs/testing/web'
 
-import InfoSection from './InfoSection'
+import { InfoSectionHome, InfoSectionFeatures } from './InfoSection'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
@@ -8,7 +8,15 @@ import InfoSection from './InfoSection'
 describe('InfoSection', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<InfoSection />)
+      render(<InfoSectionHome />)
+    }).not.toThrow()
+  })
+})
+
+describe('InfoSection', () => {
+  it('renders successfully', () => {
+    expect(() => {
+      render(<InfoSectionFeatures />)
     }).not.toThrow()
   })
 })
