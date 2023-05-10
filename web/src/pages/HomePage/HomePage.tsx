@@ -1,8 +1,8 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
-import Header from 'src/components/Navbar/Navbar'
+import Intro from 'src/components/Intro/Intro'
 import HeroSection from 'src/components/HeroSection/HeroSection'
-import InfoSection from 'src/components/InfoSection/InfoSection'
+import { InfoSectionHome } from 'src/components/InfoSection/InfoSection'
 import ImageComponent from 'src/components/ImageCard/ImageCard'
 import Footer from 'src/components/Footer/Footer'
 
@@ -16,7 +16,9 @@ const HomePage = () => {
   return (
     <>
       <MetaTags title="Home" description="Home page" />
+      <div className='headercontainer'>
       <HeroSection />
+      </div>
       <div className='images'>
       <ImageComponent 
         title='The Mountains' 
@@ -39,7 +41,7 @@ const HomePage = () => {
         backgroundImageSrc='/stories/mobile/architecturals.jpg'
       />
       </div>
-      <InfoSection />
+      <InfoSectionHome />
     </>
   )
 }

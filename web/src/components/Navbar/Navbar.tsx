@@ -16,16 +16,16 @@ const Header: React.FC = () => {
           <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <a className="nav-link" href="index.html">HOME</a>
+                <a className="nav-link" href="/">HOME</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="stories.html">STORIES</a>
+                <a className="nav-link" href="/stories">STORIES</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="features.html">FEATURES</a>
+                <a className="nav-link" href="/features">FEATURES</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="pricing.html">PRICING</a>
+                <a className="nav-link" href="/pricing">PRICING</a>
               </li>
             </ul>
             <div className="dark-button-wrap">

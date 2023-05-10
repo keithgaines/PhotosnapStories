@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=DM+Sans:700');
+@import url('https://fonts.googleapis.com/css?family=DM+Sans:400');
+
+body {
+    font-family: 'DM Sans' sans-serif;
+    overflow-x: hidden;
+}
+
+.herotext {
+    padding: 10%;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: bold;
+
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 25px;
+}
+
+h4 {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+p {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+
+.heroimage {
+    background-image: url(../public/features/mobile/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 294px;
+}
+
+.herotext {
+    width: 100vw;
+    padding: 15%;
+    padding-left: 5%;
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+}
+
+
+.containerheader {
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.containerbodytext {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.beta {
+    background-image: url(../public//shared/mobile/bg-beta.jpg);
+    background-size: cover;
+    color: white;
+    padding: 10%;
+    margin-bottom: 0;
+    background-repeat: no-repeat;
+    height: 288px;
+}
+
+.arrowimageinvert {
+    filter: invert(1);
+    float: right;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .heroimage {
+        background-image: url(../public/features/tablet/hero.jpg);
+        background-repeat: no-repeat;
+        float: right;
+        width: 30vw;
+        height: 490px;
+    }
+
+    .herotext {
+        width: 70vw;
+        padding: 15%;
+        padding-left: 5%;
+        height: 490px;
+    }
+
+    #images-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 650px;
+    }
+
+    .infosection {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .container {
+        width: 50%;
+    }
+
+    .image-wrapper {
+        max-width: 25%;
+    }
+
+    .image-wrapper {
+        max-width: 50%;
+    }
+
+    .beta {
+        background-image: url(../public//shared/tablet/bg-beta.jpg);
+        color: white;
+        padding: 10%;
+        height: 280px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .heroimage {
+        background-image: url(../public//features/desktop/hero.jpg);
+        align-content: right;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        height: 490px;
+        width: 40vw;
+        float: right;
+    }
+
+    .herotext {
+        width: 60vw;
+        padding-top: 10%;
+        padding-left: 10%;
+    }
+
+    .headerinvite {
+        margin-top: 10%;
+    }
+
+    .infosection {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .container {
+        width: 33%;
+    }
+
+    .image-wrapper {
+        max-width: 25%;
+    }
+
+    .beta {
+        background-image: url(../public/shared/desktop/bg-beta.jpg);
+        background-size: cover;
+        height: 280px;
+        padding: 0;
+        padding-left: 20%;
+        padding-top: 5%;
+    }
+
+    .beta .arrowimageinvert {
+        position: absolute;
+        left: 30%;
+    }
+
+    .beta h3 {
+        float: left;
+    }
+
+}
