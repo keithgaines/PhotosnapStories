@@ -197,7 +197,7 @@ p {
 @media  screen and (min-width: 1024px) {
     
     .heroimage {
-        background-image: url(../public//home/desktop/create-and-share.jpg);
+        background-image: url(../public/home/desktop/create-and-share.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         width: 59vw;

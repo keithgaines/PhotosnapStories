@@ -75,7 +75,7 @@ p {
 }
 
 .beta {
-    background-image: url(../public//shared/mobile/bg-beta.jpg);
+    background-image: url(../public/shared/mobile/bg-beta.jpg);
     background-size: cover;
     color: white;
     padding: 10%;
@@ -92,20 +92,24 @@ p {
 
 @media screen and (min-width: 768px) {
 
-    .heroimage {
+    .herocontainer {
+        display: flex;
+      }
+      
+      .heroimage {
         background-image: url(../public/features/tablet/hero.jpg);
         background-repeat: no-repeat;
-        float: right;
-        width: 30vw;
+        width: 40vw;
         height: 490px;
-    }
-
-    .herotext {
-        width: 70vw;
+      }
+      
+      .herotext {
+        width: 60vw;
         padding: 15%;
         padding-left: 5%;
         height: 490px;
-    }
+      }
+      
 
     #images-container {
         display: flex;
@@ -133,7 +137,7 @@ p {
     }
 
     .beta {
-        background-image: url(../public//shared/tablet/bg-beta.jpg);
+        background-image: url(../public/shared/tablet/bg-beta.jpg);
         color: white;
         padding: 10%;
         height: 280px;
@@ -143,7 +147,7 @@ p {
 @media screen and (min-width: 1024px) {
 
     .heroimage {
-        background-image: url(../public//features/desktop/hero.jpg);
+        background-image: url(../public/features/desktop/hero.jpg);
         align-content: right;
         background-repeat: no-repeat;
         object-fit: cover;
