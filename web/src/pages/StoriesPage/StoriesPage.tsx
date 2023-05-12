@@ -6,7 +6,7 @@ import ImageComponent from 'src/components/ImageCard/ImageCard'
 import '../../stories.css'
 import '../../imagecard.css'
 
-const imageData = [
+const imageDataStories = [
   {
     date: 'April 16th, 2020',
     title: 'The Mountains',
@@ -127,7 +127,7 @@ const StoriesPage = () => {
       <MetaTags title="Stories" description="Stories page" />
       <StoriesIntro />
       <div className='images'>
-        {imageData.map((image, index) => (
+        {imageDataStories.map((image, index) => (
           <ImageComponent
             key={index}
             date={image.date}

@@ -7,7 +7,7 @@ interface ImageComponentProps {
   backgroundImageSrc: string;
 }
 
-const ImageComponent: React.FC<ImageComponentProps> = ({
+const ImageComponentStories: React.FC<ImageComponentProps> = ({
   date,
   title,
   artist,
@@ -37,4 +37,4 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
   );
 };
 
-export default ImageComponent;
+export default ImageComponentStories;
