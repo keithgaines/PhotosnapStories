@@ -1,121 +1,35 @@
-# README
+# PhotoSnap - React and RedwoodJS Rebuild
+Welcome to the higher level rebuild of PhotoSnap! In this project, I have taken the original version I built (https://github.com/keithgaines/photosnap) and rebuilt it using modern technologies like React, RedwoodJS, and additional components. The aim was to create a more robust and feature-rich front end utilizing the power of React and TypeScript, while keeping the design constraints of the original challnge.
 
-Welcome to [RedwoodJS](https://redwoodjs.com)!
+## Table of Contents
 
-> **Prerequisites**
->
-> - Redwood requires [Node.js](https://nodejs.org/en/) (>=18.x) and [Yarn](https://yarnpkg.com/) (>=1.15)
-> - Are you on Windows? For best results, follow our [Windows development setup](https://redwoodjs.com/docs/how-to/windows-development-setup) guide
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
 
-Start by installing dependencies:
+## Introduction
 
-```
-yarn install
-```
+This challenge was originally a Front End Mentor (https://www.frontendmentor.io/) challenge, but I built this version as a full stack web app hosted on Vercel. 
 
-Then change into that directory and start the development server:
+## Features
 
-```
-cd my-redwood-project
-yarn redwood dev
-```
+The rebuild of PhotoSnap includes several new features and improvements over the original version. Some of the key features are:
 
-Your browser should automatically open to http://localhost:8910 where you'll see the Welcome Page, which links to many great resources.
+- **React and TypeScript**: The entire front end is built using React and TypeScript, enabling a more structured and type-safe development experience.
+- **RedwoodJS**: The project utilizes RedwoodJS, a full-stack JavaScript framework built on React and GraphQL, providing a powerful foundation for building scalable and maintainable applications.
+- **Responsive Design**: The application is fully responsive, ensuring seamless access and optimal viewing across various devices and screen sizes.
+- **Enhanced Performance**: Careful consideration has been given to optimize the performance of the application, ensuring fast load times and smooth interactions.
 
-> **The Redwood CLI**
->
-> Congratulations on running your first Redwood CLI command!
-> From dev to deploy, the CLI is with you the whole way.
-> And there's quite a few commands at your disposal:
-> ```
-> yarn redwood --help
-> ```
-> For all the details, see the [CLI reference](https://redwoodjs.com/docs/cli-commands).
+## Technologies Used
 
-## Prisma and the database
+The rebuild of PhotoSnap leverages a variety of technologies to deliver a powerful and engaging experience. The key technologies used in this project are:
 
-Redwood wouldn't be a full-stack framework without a database. It all starts with the schema. Open the [`schema.prisma`](api/db/schema.prisma) file in `api/db` and replace the `UserExample` model with the following `Post` model:
-
-```
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  body      String
-  createdAt DateTime @default(now())
-}
-```
-
-Redwood uses [Prisma](https://www.prisma.io/), a next-gen Node.js and TypeScript ORM, to talk to the database. Prisma's schema offers a declarative way of defining your app's data models. And Prisma [Migrate](https://www.prisma.io/migrate) uses that schema to make database migrations hassle-free:
-
-```
-yarn rw prisma migrate dev
-
-# ...
-
-? Enter a name for the new migration: › create posts
-```
-
-> `rw` is short for `redwood`
-
-You'll be prompted for the name of your migration. `create posts` will do.
-
-Now let's generate everything we need to perform all the CRUD (Create, Retrieve, Update, Delete) actions on our `Post` model:
-
-```
-yarn redwood g scaffold post
-```
-
-Navigate to http://localhost:8910/posts/new, fill in the title and body, and click "Save":
-
-Did we just create a post in the database? Yup! With `yarn rw g scaffold <model>`, Redwood created all the pages, components, and services necessary to perform all CRUD actions on our posts table.
-
-## Frontend first with Storybook
-
-Don't know what your data models look like?
-That's more than ok—Redwood integrates Storybook so that you can work on design without worrying about data.
-Mockup, build, and verify your React components, even in complete isolation from the backend:
-
-```
-yarn rw storybook
-```
-
-Before you start, see if the CLI's `setup ui` command has your favorite styling library:
-
-```
-yarn rw setup ui --help
-```
-
-## Testing with Jest
-
-It'd be hard to scale from side project to startup without a few tests.
-Redwood fully integrates Jest with the front and the backends and makes it easy to keep your whole app covered by generating test files with all your components and services:
-
-```
-yarn rw test
-```
-
-To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing.md#scenarios)  and [GraphQL mocking](https://redwoodjs.com/docs/testing.md#mocking-graphql-calls).
-
-## Ship it
-
-Redwood is designed for both serverless deploy targets like Netlify and Vercel and serverful deploy targets like Render and AWS:
-
-```
-yarn rw setup deploy --help
-```
-
-Don't go live without auth!
-Lock down your front and backends with Redwood's built-in, database-backed authentication system ([dbAuth](https://redwoodjs.com/docs/authentication#self-hosted-auth-installation-and-setup)), or integrate with nearly a dozen third party auth providers:
-
-```
-yarn rw setup auth --help
-```
-
-## Next Steps
-
-The best way to learn Redwood is by going through the comprehensive [tutorial](https://redwoodjs.com/docs/tutorial/foreword) and joining the community (via the [Discourse forum](https://community.redwoodjs.com) or the [Discord server](https://discord.gg/redwoodjs)).
-
-## Quick Links
-
-- Stay updated: read [Forum announcements](https://community.redwoodjs.com/c/announcements/5), follow us on [Twitter](https://twitter.com/redwoodjs), and subscribe to the [newsletter](https://redwoodjs.com/newsletter)
-- [Learn how to contribute](https://redwoodjs.com/docs/contributing)
+- **React**: A JavaScript library for building user interfaces, providing a flexible and efficient way to create interactive components.
+- **RedwoodJS**: A full-stack JavaScript framework built on React and GraphQL, simplifying the development of scalable and robust applications.
+- **TypeScript**: A typed superset of JavaScript, adding static types to enable enhanced code quality, maintainability, and developer productivity.
+- **GraphQL**: A query language for APIs, enabling efficient data fetching and providing a strongly-typed schema for better developer experience.
+- **CSS Modules**: A CSS approach that scopes styles to individual components, reducing conflicts and improving maintainability.
+- **Responsive Design**: Utilizing CSS media queries and responsive techniques to ensure optimal viewing across different devices and screen sizes.
