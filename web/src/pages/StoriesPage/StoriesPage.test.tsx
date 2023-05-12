@@ -1,14 +1,12 @@
-import { render } from '@redwoodjs/testing/web'
+import { render } from '@testing-library/react';
+import StoriesIntro from '../../components/StoriesIntro';
 
-import StoriesPage from './StoriesPage'
+test('renders StoriesIntro component', () => {
+  const { getByText } = render(<StoriesIntro />);
+  
+  const featuredStoryText = getByText("Last month's featured story"); 
+  const title = getByText('Hazy full moon of Appalachia');
 
-//   Improve this test with help from the Redwood Testing Doc:
-//   https://redwoodjs.com/docs/testing#testing-pages-layouts
-
-describe('StoriesPage', () => {
-  it('renders successfully', () => {
-    expect(() => {
-      render(<StoriesPage />)
-    }).not.toThrow()
-  })
-})
+  expect(featuredStoryText).toBeInTheDocument();
+  expect(title).toBeInTheDocument();
+});

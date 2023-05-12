@@ -7,7 +7,7 @@ import Routes from 'src/Routes'
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
+    <RedwoodProvider titleTemplate="%PageTitle">
       <RedwoodApolloProvider>
         <Routes />
       </RedwoodApolloProvider>
