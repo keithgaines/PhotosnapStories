@@ -3,6 +3,7 @@ import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import Intro from 'src/components/Intro/Intro'
 
+import '../../features.css'
 import '../../pricing.css'
 
 function Pricing() {
