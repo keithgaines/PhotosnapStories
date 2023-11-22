@@ -1,5 +1,5 @@
 # PhotoSnap - React and RedwoodJS Rebuild
-Welcome to the higher level rebuild of PhotoSnap! In this project, I have taken the original version I built (https://github.com/keithgaines/photosnap) and rebuilt it using modern technologies like React, RedwoodJS, and additional components. The aim was to create a more robust and feature-rich front end utilizing the power of React and TypeScript, while keeping the design constraints of the original challnge.
+Welcome to the higher level rebuild of PhotoSnap! In this project, I have taken the original version I built and rebuilt it using modern technologies like React, RedwoodJS, and additional components. The aim was to create a more robust and feature-rich front end utilizing the power of React and TypeScript, while keeping the design constraints of the original challnge.
 
 ## Table of Contents
 
