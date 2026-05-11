@@ -15,10 +15,13 @@
   },
   "engines": {
     "node": "24.x",
-    "yarn": ">=1.15"
+    "yarn": "3.x"
   },
+  "packageManager": "yarn@3.5.0",
   "prisma": {
     "seed": "yarn rw exec seed"
   },
-  "packageManager": "yarn@3.5.0"
+  "scripts": {
+    "vercel-build": "yarn install --immutable && yarn rw build"
+  }
 }
