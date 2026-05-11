@@ -14,7 +14,7 @@
     "root": true
   },
   "engines": {
-    "node": "24.x",
+    "node": "20.x",
     "yarn": "3.x"
   },
   "packageManager": "yarn@3.5.0",
@@ -22,6 +22,7 @@
     "seed": "yarn rw exec seed"
   },
   "scripts": {
+    "preinstall": "corepack enable",
     "vercel-build": "yarn install --immutable && yarn rw build"
   }
 }
