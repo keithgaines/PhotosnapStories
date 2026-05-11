@@ -1,11 +1,9 @@
 {
   "private": true,
-  "workspaces": {
-    "packages": [
-      "api",
-      "web"
-    ]
-  },
+  "workspaces": [
+    "api",
+    "web"
+  ],
   "devDependencies": {
     "@redwoodjs/core": "5.0.6"
   },
@@ -22,7 +20,6 @@
     "seed": "yarn rw exec seed"
   },
   "scripts": {
-    "preinstall": "node -e \"require('child_process').execSync('corepack enable', { stdio: 'inherit' })\"",
     "vercel-build": "yarn rw build"
   }
 }
