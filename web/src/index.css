@@ -1,280 +1,258 @@
-@import url('https://fonts.googleapis.com/css?family=DM+Sans:700');
-@import url('https://fonts.googleapis.com/css?family=DM+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=DM+Sans:400,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: 'DM Sans' sans-serif;
+    font-family: 'DM Sans', sans-serif;
     overflow-x: hidden;
-
+    background: white;
+    color: black;
 }
 
-.herotext {
-    padding: 10%;
-}
+/* =========================
+   TYPOGRAPHY
+========================= */
 
 h1 {
-    font-size: 40px;
-    line-height: 48px;
-    font-weight: bold;
-
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-weight: 700;
 }
 
 h2 {
-    font-size: 24px;
-    line-height: 25px;
-    font-weight: bold;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.2;
+    font-weight: 700;
 }
 
 h3 {
-    font-size: 18px;
-    line-height: 25px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.4;
+    font-weight: 700;
 }
 
 h4 {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    font-weight: 700;
 }
 
 p {
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
-.arrowimage {
-    float: right;
+/* =========================
+   LAYOUT
+========================= */
+
+#root {
+    width: 100%;
 }
 
-.arrowimageinvert {
-    filter: invert(100%);
-    float: right;
+/* =========================
+   HERO / SECTION LAYOUTS
+========================= */
+
+.herocontainer {
+    display: flex;
+    flex-direction: column;
 }
 
-.blurb img {
+/* Shared section styling */
+
+.createandshare,
+.beautifulstories,
+.designedforeveryone {
+    display: flex;
     align-items: center;
-    margin: auto;
+    justify-content: center;
+
+    padding: clamp(2rem, 6vw, 6rem);
+
+    min-height: 450px;
+    width: 100%;
+}
+
+.section-content {
+    width: 100%;
+    max-width: 540px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.heroimage,
+.desk,
+.manwithcamera {
+    width: 100%;
+    min-height: 320px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Mobile Images */
+
+.heroimage {
+    background-image: url(../public/home/mobile/create-and-share.jpg);
+}
+
+.desk {
+    background-image: url(../public/home/mobile/beautiful-stories.jpg);
+}
+
+.manwithcamera {
+    background-image: url(../public/home/mobile/designed-for-everyone.jpg);
+}
+
+/* Hide unused img tags if present */
+
+.heroimage img,
+.desk img,
+.manwithcamera img {
+    display: none;
+}
+
+/* =========================
+   ARROWS
+========================= */
+
+.arrowimage,
+.arrowimageinvert {
+    display: flex;
+    align-items: center;
+}
+
+.arrowimage img,
+.arrowimageinvert img {
+    width: 24px;
+    height: 24px;
+}
+
+.arrowimageinvert img {
+    filter: invert(1);
+}
+
+/* =========================
+   FEATURES / INFO SECTION
+========================= */
+
+.infosection {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+    padding: clamp(2rem, 6vw, 6rem);
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 10%;
+
+    text-align: center;
+    gap: 1.5rem;
 }
 
+.blurb img {
+    max-width: 72px;
+    height: auto;
+}
 
 .containerheader {
-    margin-top: 25px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .containerbodytext {
-    text-align: center;
-    margin-top: 20px;
+    max-width: 340px;
 }
 
-
-@media screen and (max-width: 767px) {
-    .createandshare,
-    .beautifulstories,
-    .designedforeveryone {
-        width: 100%;
-        padding: 10%;
-    }
-
-    .heroimage img {
-        width: 100%;
-        height: 294px;
-    }
-
-    .desk img,
-    .manwithcamera img {
-        width: 100%;
-        height: 271px;
-    }
-
-    .heroimage,
-    .desk,
-    .manwithcamera {
-        background-repeat: no-repeat;
-    }
-
-
-    .heroimage {
-        background-image: url(../public/home/mobile/create-and-share.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-    }
-
-    .desk {
-        background-image: url(../public/home/mobile/beautiful-stories.jpg);
-    }
-
-    .manwithcamera {
-        background-image: url(../public/home/mobile/designed-for-everyone.jpg);
-    }
-}
-
+/* =========================
+   TABLET
+========================= */
 
 @media screen and (min-width: 768px) {
 
+    .herocontainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Alternate layout rows */
 
     .heroimage {
+        grid-column: 2;
+        min-height: 650px;
+
         background-image: url(../public/home/tablet/create-and-share.jpg);
     }
 
-
-    .desk {
-        background-image: url(../public//home/tablet/beautiful-stories.jpg);
-        background-repeat: no-repeat;
-    }
-
-    .manwithcamera {
-        background-image: url(../public//home/tablet/designed-for-everyone.jpg);
-    }
-
-    .herocontainer {
-        display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        gap: 0;
-    }
-
-    .createandshare,
-    .designedforeveryone {
-        width: 60vw;
-        padding: 20%;
-        padding-top: 15%;
-    }
-
-    .beautifulstories {
-        background-repeat: no-repeat;
-        padding-top: 0;
-        position: absolute;
-        top: 95%;
-        right: 7%;
-    }
-
-
     .createandshare {
-        grid-row: 1;
-    }
-
-    .heroimage img,
-    .desk img,
-    .manwithcamera img {
-        width: 40vw;
-        padding-bottom: 0;
+        grid-column: 1;
     }
 
     .desk {
-        grid-row: 2;
-        width: 40vw;
+        grid-column: 1;
+
+        background-image: url(../public/home/tablet/beautiful-stories.jpg);
     }
 
     .beautifulstories {
-        grid-row: 2;
-        width: 50vw;
-        margin-left: 0;    
-    }
-
-    .designedforeveryone {
-        grid-row: 3;
-    }
-
-    .manwithcamera {
-        grid-row: 3;
         grid-column: 2;
     }
 
-    #root {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+    .manwithcamera {
+        grid-column: 2;
+
+        background-image: url(../public/home/tablet/designed-for-everyone.jpg);
     }
 
+    .designedforeveryone {
+        grid-column: 1;
+    }
+
+    .infosection {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-@media  screen and (min-width: 1024px) {
-    
+/* =========================
+   DESKTOP
+========================= */
+
+@media screen and (min-width: 1024px) {
+
+    .createandshare,
+    .beautifulstories,
+    .designedforeveryone {
+        min-height: 700px;
+        padding: clamp(4rem, 8vw, 8rem);
+    }
+
     .heroimage {
         background-image: url(../public/home/desktop/create-and-share.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 59vw;
-        }
-
-    .headerinvite {
-        margin-top: 10%;
     }
 
     .desk {
-        background-image: url(../public//home/desktop/beautiful-stories.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 60vw;
+        background-image: url(../public/home/desktop/beautiful-stories.jpg);
     }
 
     .manwithcamera {
         background-image: url(../public/home/desktop/designed-for-everyone.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 59vw;
     }
 
-    .createandshare,
-    .designedforeveryone {
-        padding: 20%;
-        padding-top: 15%;
-        height: 600px;
-        width: 40vw;
+    .section-content {
+        max-width: 460px;
     }
-
-    .beautifulstories {
-        padding-top: 0;
-        position: absolute;
-        top: 900px;
-        right: 80px;
-        width: 40vw;
-        margin-left: 0;    
-    }
-
-
-    .createandshare {
-        grid-row: 1;
-    }
-
-    .heroimage img,
-    .manwithcamera img {
-        width: 10vw;
-        padding-bottom: 0;
-    }
-
-    .desk {
-        grid-row: 2;
-        width: 130%;
-    }
-
-    .designedforeveryone {
-        grid-row: 3;
-    }
-
-    .manwithcamera {
-        grid-row: 3;
-    }
-
-    #root {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .infosection {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .container {
-        width: 33%;
-    }
-
 }
