@@ -1,0 +1,122 @@
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.story-content {
+  display: grid;
+  align-content: center;
+  gap: var(--space-md);
+
+  padding: clamp(4rem, 8vw, 8rem) var(--container-padding);
+
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.story-content--dark {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.story-content p {
+  max-width: 42ch;
+}
+
+.story-content--dark p {
+  color: var(--color-text-muted-inverse);
+}
+
+.story-content h1 {
+  max-width: 12ch;
+
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: var(--letter-spacing-heading);
+  text-transform: uppercase;
+}
+
+.story-image {
+  min-height: 18rem;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.story-image--create {
+  background-image: url('/home/mobile/create-and-share.jpg');
+}
+
+.story-image--beautiful {
+  background-image: url('/home/mobile/beautiful-stories.jpg');
+}
+
+.story-image--designed {
+  background-image: url('/home/mobile/designed-for-everyone.jpg');
+}
+
+.text-link--light {
+  color: var(--color-white);
+}
+
+.text-link--light img {
+  filter: brightness(0) invert(1);
+}
+
+/* Home Story Cards */
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  background: var(--color-black);
+}
+
+@media (min-width: 768px) {
+  .story-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .story-section--image-left .story-image {
+    order: -1;
+  }
+
+  .story-image {
+    min-height: clamp(30rem, 55vw, 40rem);
+  }
+
+  .story-image--create {
+    background-image: url('/home/tablet/create-and-share.jpg');
+  }
+
+  .story-image--beautiful {
+    background-image: url('/home/tablet/beautiful-stories.jpg');
+  }
+
+  .story-image--designed {
+    background-image: url('/home/tablet/designed-for-everyone.jpg');
+  }
+
+  .images {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .story-image--create {
+    background-image: url('/home/desktop/create-and-share.jpg');
+  }
+
+  .story-image--beautiful {
+    background-image: url('/home/desktop/beautiful-stories.jpg');
+  }
+
+  .story-image--designed {
+    background-image: url('/home/desktop/designed-for-everyone.jpg');
+  }
+
+  .images {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
