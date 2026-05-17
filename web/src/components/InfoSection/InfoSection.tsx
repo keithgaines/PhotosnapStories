@@ -1,87 +1,84 @@
-import React from 'react';
+import React from 'react'
 
-function FeatureSection(props) {
-  return (
-    <div className="container">
-      <div className="containerimage">
-        <img src={props.image} alt={props.alt} />
-      </div>
-      <div className="containerheader">
-        <h2>{props.title}</h2>
-      </div>
-      <div className="containerbodytext">
-        <p>{props.description}</p>
-      </div>
-    </div>
-  );
+interface Feature {
+  image: string
+  alt: string
+  title: string
+  description: string
 }
 
-function InfoSectionHome() {
-  return (
-    <div className="infosection">
-      <FeatureSection
-        image="/features/desktop/responsive.svg"
-        alt="devices"
-        title="100% Responsive"
-        description="No matter which the device you’re on, our site is fully responsive and stories look beautiful on any screen."
-      />
-      <FeatureSection
-        image="/features/desktop/no-limit.svg"
-        alt="infinity sign"
-        title="No Photo Upload Limit"
-        description="Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go."
-      />
-      <FeatureSection
-        image="/features/desktop/embed.svg"
-        alt="embed"
-        title="Available to Embed"
-        description="Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more."
-      />
-    </div>
-  );
-}
+const homeFeatures: Feature[] = [
+  {
+    image: '/features/desktop/responsive.svg',
+    alt: 'Devices',
+    title: '100% Responsive',
+    description:
+      'No matter which device you’re on, our site is fully responsive and stories look beautiful on any screen.',
+  },
+  {
+    image: '/features/desktop/no-limit.svg',
+    alt: 'Infinity sign',
+    title: 'No Photo Upload Limit',
+    description:
+      'Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go.',
+  },
+  {
+    image: '/features/desktop/embed.svg',
+    alt: 'Embed icon',
+    title: 'Available to Embed',
+    description:
+      'Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more.',
+  },
+]
 
-function InfoSectionFeatures() {
+const additionalFeatures: Feature[] = [
+  {
+    image: '/features/desktop/custom-domain.svg',
+    alt: 'Domain icon',
+    title: 'Custom Domain',
+    description:
+      'With Photosnap subscriptions you can host your stories on your own domain. You can also remove our branding.',
+  },
+  {
+    image: '/features/desktop/boost-exposure.svg',
+    alt: 'Exposure boost icon',
+    title: 'Boost Your Exposure',
+    description:
+      'Users who viewed your story or gallery can get notified of new and featured stories with our built-in mailing list.',
+  },
+  {
+    image: '/features/desktop/drag-drop.svg',
+    alt: 'Drag and drop icon',
+    title: 'Drag & Drop Image',
+    description:
+      'Easily drag and drop your image and get beautiful shots every time. No over-the-top tooling to add friction to creating stories.',
+  },
+]
+
+const FeatureSection = ({ image, alt, title, description }: Feature) => {
   return (
-    <div className="infosection">
-      <FeatureSection
-        image="/features/desktop/responsive.svg"
-        alt="devices"
-        title="100% Responsive"
-        description="No matter which the device you’re on, our site is fully responsive and stories look beautiful on any screen."
-      />
-      <FeatureSection
-        image="/features/desktop/no-limit.svg"
-        alt="infinity sign"
-        title="No Photo Upload Limit"
-        description="Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go."
-      />
-      <FeatureSection
-        image="/features/desktop/embed.svg"
-        alt="embed"
-        title="Available to Embed"
-        description="Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more."
-      />
-      <FeatureSection
-        image="/features/desktop/custom-domain.svg"
-        alt="domain"
-        title="Custom Domain"
-        description="With Photosnap subscriptions you can host your stories on your own domain. You can also remove our branding!"
-      />
-      <FeatureSection
-        image="/features/desktop/boost-exposure.svg"
-        alt="boost"
-        title="Boost Your Exposure"
-        description="Users that viewed your story or gallery can easily get notifed of new and featured stories with our built in mailing list."
-      />
-      <FeatureSection
-        image="/features/desktop/drag-drop.svg"
-        alt="dragndrop"
-        title="Drag & Drop Image"
-        description="Easily drag and drop your image and get beautiful shots everytime. No over the top tooling to add friction to creating stories."
-      />
-    </div>
+    <article className="feature-card">
+      <img src={image} alt={alt} />
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </article>
   )
 }
 
-export { InfoSectionHome, InfoSectionFeatures } ;
+const InfoSection = ({ features }: { features: Feature[] }) => {
+  return (
+    <section className="infosection">
+      {features.map((feature) => (
+        <FeatureSection key={feature.title} {...feature} />
+      ))}
+    </section>
+  )
+}
+
+const InfoSectionHome = () => <InfoSection features={homeFeatures} />
+
+const InfoSectionFeatures = () => (
+  <InfoSection features={[...homeFeatures, ...additionalFeatures]} />
+)
+
+export { InfoSectionHome, InfoSectionFeatures }

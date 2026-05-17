@@ -1,84 +1,87 @@
-.images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center
+.image-wrapper {
+  position: relative;
+
+  min-height: 31.25rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: var(--space-lg) var(--space-md);
+
+  color: var(--color-white);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+
+  transition: transform var(--transition-default),
+    opacity var(--transition-default);
 }
 
-.image-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: auto;
-    color: white;
+.image-wrapper:hover {
+  transform: translateY(calc(var(--space-xs) * -1));
+}
+
+.image-wrapper::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+
+  z-index: 0;
+}
+
+.image-info,
+.image-body {
+  position: relative;
+  z-index: 1;
 }
 
 .image-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 60%;
-    margin-left: 8%;
+  display: grid;
+  gap: var(--space-xs);
+
+  margin-bottom: var(--space-md);
 }
 
 .image-title {
-    font-weight: bold;
-    margin-bottom: 8px;
+  margin: 0;
+  font-weight: 700;
 }
 
 .image-artist {
-    margin-bottom: 0;
-    color: white;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .image-body {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: var(--space-sm);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .image-story {
-    flex: 1;
-    margin-right: 24px;
-    margin-left: 5%;
-    font-weight: bold;
+  margin: 0;
+
+  font-weight: 700;
+
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
 }
 
 .image-arrow {
-    width: 24px;
-    height: 24px;
-    margin-right: 8%;
-    filter: invert(1);
-}
+  width: 1.5rem;
+  height: 1.5rem;
 
-
-hr {
-    border-color: white;
-    width: 90vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+  filter: invert(1);
 }
-
-@media screen and (min-width: 768px) {
-.images {
-    width: 100vw;
-}
-
-.image-wrapper {
-    max-width: 50%;
-}
-}
-
-@media screen and (min-width: 1024px) {
-    .images {
-        width: 100vw;
-    }
-    
-    .image-wrapper {
-        max-width: 25%;
-    }
-    }

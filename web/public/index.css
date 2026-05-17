@@ -1,287 +1,282 @@
-@import url('https://fonts.googleapis.com/css?family=DM+Sans:700');
-@import url('https://fonts.googleapis.com/css?family=DM+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=DM+Sans:400,700');
 
-body {
-    font-family: 'DM Sans' sans-serif;
-    overflow-x: hidden;
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-grey: #dfdfdf;
+  --color-light-grey: #f5f5f5;
 
+  --container-max: 1110px;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  --transition-default: 0.25s ease;
 }
 
-.herotext {
-    padding: 10%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }
 
 h1 {
-    font-size: 40px;
-    line-height: 48px;
-    font-weight: bold;
-
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  line-height: 1.2;
+  font-weight: 700;
 }
 
 h2 {
-    font-size: 24px;
-    line-height: 25px;
-    font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 700;
 }
 
 h3 {
-    font-size: 18px;
-    line-height: 25px;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  font-weight: 700;
 }
 
 h4 {
-    font-size: 12px;
-    line-height: 16px;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
 }
 
 p {
-    font-size: 15px;
-    line-height: 25px;
+  font-size: 0.9375rem;
+  line-height: 1.65;
 }
 
-.arrowimage {
-    float: right;
+/* Home story sections */
+
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.arrowimageinvert {
-    filter: invert(100%);
-    float: right;
+.story-content {
+  display: grid;
+  align-content: center;
+  gap: var(--space-md);
+
+  padding: clamp(4.5rem, 8vw, 10.8125rem) clamp(2rem, 6vw, 7rem);
 }
 
-.blurb img {
-    align-items: center;
-    margin: auto;
+.story-content--dark {
+  color: var(--color-white);
+  background: var(--color-black);
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10%;
+.story-image {
+  min-height: 18.375rem;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-
-.containerheader {
-    margin-top: 25px;
-    font-weight: bold;
+.story-image--create {
+  background-image: url('/home/mobile/create-and-share.jpg');
 }
 
-.containerbodytext {
-    text-align: center;
-    margin-top: 20px;
+.story-image--beautiful {
+  background-image: url('/home/mobile/beautiful-stories.jpg');
 }
 
-
-@media screen and (max-width: 767px) {
-    .createandshare,
-    .beautifulstories,
-    .designedforeveryone {
-        width: 100%;
-        padding: 10%;
-    }
-
-    .heroimage img {
-        width: 100%;
-        height: 294px;
-    }
-
-    .desk img,
-    .manwithcamera img {
-        width: 100%;
-        height: 271px;
-    }
-
-    .heroimage,
-    .desk,
-    .manwithcamera {
-        background-repeat: no-repeat;
-    }
-
-
-    .heroimage {
-        background-image: url(../public/home/mobile/create-and-share.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-    }
-
-    .desk {
-        background-image: url(../public/home/mobile/beautiful-stories.jpg);
-    }
-
-    .manwithcamera {
-        background-image: url(../public/home/mobile/designed-for-everyone.jpg);
-    }
+.story-image--designed {
+  background-image: url('/home/mobile/designed-for-everyone.jpg');
 }
 
+/* Reusable text links */
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+
+  width: fit-content;
+
+  margin-top: var(--space-sm);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+
+  transition: opacity var(--transition-default);
+}
+
+.text-link:hover {
+  opacity: 0.7;
+}
+
+.text-link--light img {
+  filter: invert(1);
+}
+
+/* Feature cards */
+
+.infosection {
+  display: grid;
+  gap: var(--space-xl);
+
+  padding: clamp(5rem, 8vw, 7.5rem) clamp(2rem, 6vw, 10rem);
+}
+
+.feature-card {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+}
+
+.feature-card img {
+  margin-bottom: var(--space-md);
+}
+
+/* Shared split layout */
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.split-layout__content {
+  display: grid;
+  align-content: center;
+  gap: var(--space-md);
+
+  padding: clamp(4rem, 8vw, 8rem) clamp(2rem, 6vw, 7rem);
+}
+
+.split-layout__content--dark {
+  color: var(--color-white);
+  background: var(--color-black);
+}
+
+.split-layout__image {
+  min-height: 18rem;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Shared beta CTA */
+
+.beta-cta {
+  min-height: 17.5rem;
+
+  display: grid;
+  align-items: center;
+  gap: var(--space-md);
+
+  padding: clamp(4rem, 8vw, 6rem) clamp(2rem, 8vw, 10rem);
+
+  color: var(--color-white);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Tablet */
 
 @media screen and (min-width: 768px) {
+  .story-section {
+    grid-template-columns: 42% 58%;
+    min-height: 37.5rem;
+  }
 
+  .story-section--image-left {
+    grid-template-columns: 58% 42%;
+  }
 
-    .heroimage {
-        background-image: url(../public/home/tablet/create-and-share.jpg);
-    }
+  .story-section--image-left .story-image {
+    order: 1;
+  }
 
+  .story-section--image-left .story-content {
+    order: 2;
+  }
 
-    .desk {
-        background-image: url(../public//home/tablet/beautiful-stories.jpg);
-        background-repeat: no-repeat;
-    }
+  .story-image {
+    min-height: 100%;
+  }
 
-    .manwithcamera {
-        background-image: url(../public//home/tablet/designed-for-everyone.jpg);
-    }
+  .story-image--create {
+    background-image: url('/home/tablet/create-and-share.jpg');
+  }
 
-    .herocontainer {
-        display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        gap: 0;
-    }
+  .story-image--beautiful {
+    background-image: url('/home/tablet/beautiful-stories.jpg');
+  }
 
-    .createandshare,
-    .designedforeveryone {
-        width: 60vw;
-        padding: 20%;
-        padding-top: 15%;
-    }
+  .story-image--designed {
+    background-image: url('/home/tablet/designed-for-everyone.jpg');
+  }
 
-    .beautifulstories {
-        background-repeat: no-repeat;
-        padding-top: 0;
-        position: absolute;
-        top: 95%;
-        right: 7%;
-    }
+  .infosection {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
+  .split-layout {
+    grid-template-columns: 58% 42%;
+    min-height: 30rem;
+  }
 
-    .createandshare {
-        grid-row: 1;
-    }
-
-    .heroimage img,
-    .desk img,
-    .manwithcamera img {
-        width: 40vw;
-        padding-bottom: 0;
-    }
-
-    .desk {
-        grid-row: 2;
-        width: 40vw;
-    }
-
-    .beautifulstories {
-        grid-row: 2;
-        width: 50vw;
-        margin-left: 0;    
-    }
-
-    .designedforeveryone {
-        grid-row: 3;
-    }
-
-    .manwithcamera {
-        grid-row: 3;
-        grid-column: 2;
-    }
-
-    #root {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .image-wrapper {
-        max-width: 50%;
-    }
-
+  .beta-cta {
+    grid-template-columns: 1fr auto;
+  }
 }
 
-@media  screen and (min-width: 1024px) {
-    
-    .heroimage {
-        background-image: url(../public//home/desktop/create-and-share.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 59vw;
-        }
+/* Desktop */
 
-    .headerinvite {
-        margin-top: 10%;
-    }
-
-    .desk {
-        background-image: url(../public//home/desktop/beautiful-stories.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 60vw;
-    }
-
-    .manwithcamera {
-        background-image: url(../public//home/desktop/designed-for-everyone.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 59vw;
-    }
-
-    .createandshare,
-    .designedforeveryone {
-        padding: 20%;
-        padding-top: 15%;
-        height: 600px;
-        width: 40vw;
-    }
-
-    .beautifulstories {
-        padding-top: 0;
-        position: absolute;
-        top: 900px;
-        right: 80px;
-        width: 40vw;
-        margin-left: 0;    
-    }
-
-
-    .createandshare {
-        grid-row: 1;
-    }
-
-    .heroimage img,
-    .manwithcamera img {
-        width: 10vw;
-        padding-bottom: 0;
-    }
-
-    .desk {
-        grid-row: 2;
-        width: 130%;
-    }
-
-    .designedforeveryone {
-        grid-row: 3;
-    }
-
-    .manwithcamera {
-        grid-row: 3;
-    }
-
-    #root {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .infosection {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .container {
-        width: 33%;
-    }
-
-    .image-wrapper {
-        max-width: 25%;
-    }
+@media screen and (min-width: 1024px) {
+  .infosection {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

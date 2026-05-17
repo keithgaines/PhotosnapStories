@@ -1,0 +1,243 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-white);
+}
+
+.site-nav {
+  width: min(100% - 3rem, var(--container-max));
+  min-height: 72px;
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-nav__logo-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-nav__logo {
+  width: 170px;
+  height: auto;
+}
+
+.site-nav__menu {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__link,
+.site-nav__cta {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.site-nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-black);
+  transition: opacity var(--transition-default);
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus-visible {
+  opacity: 0.35;
+}
+
+.site-nav__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+  padding-inline: 24px;
+
+  background: var(--color-black);
+  color: var(--color-white);
+
+  transition: background-color var(--transition-default),
+    color var(--transition-default);
+}
+
+.site-nav__cta:hover,
+.site-nav__cta:focus-visible {
+  background: var(--color-light-grey);
+  color: var(--color-black);
+}
+
+.site-nav__toggle {
+  display: none;
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .site-nav {
+    width: min(100% - 3rem, var(--container-max));
+  }
+
+  .site-nav__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--color-black);
+  }
+
+  .site-nav__toggle-line,
+  .site-nav__toggle-line::before,
+  .site-nav__toggle-line::after {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+  }
+
+  .site-nav__toggle-line {
+    position: relative;
+  }
+
+  .site-nav__toggle-line::before,
+  .site-nav__toggle-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .site-nav__toggle-line::before {
+    top: -6px;
+  }
+
+  .site-nav__toggle-line::after {
+    top: 6px;
+  }
+
+  .site-nav__menu {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 2rem 1.5rem;
+    background: var(--color-white);
+    box-shadow: 0 2rem 3rem rgb(0 0 0 / 15%);
+  }
+
+  .site-nav__menu.is-open {
+    display: flex;
+  }
+
+  .site-nav__links {
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 0;
+  }
+
+  .site-nav__cta {
+    width: min(100%, 20rem);
+  }
+
+  .site-header {
+    background: var(--color-white);
+    color: var(--color-black);
+  }
+
+  .site-nav {
+    width: min(100% - (var(--container-padding) * 2), var(--container-max));
+    min-height: 4.5rem;
+    margin-inline: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+  }
+
+  .site-nav__logo {
+    width: 10.625rem;
+    height: auto;
+  }
+
+  .site-nav__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .site-nav__link,
+  .site-nav__cta {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: var(--letter-spacing-eyebrow);
+    text-transform: uppercase;
+  }
+
+  .site-nav__link {
+    transition: opacity var(--transition-default);
+  }
+
+  .site-nav__link:hover,
+  .site-nav__link:focus-visible {
+    opacity: 0.6;
+  }
+
+  .site-nav__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 2.5rem;
+    padding-inline: 1.5rem;
+
+    background: var(--color-black);
+    color: var(--color-white);
+
+    transition: background-color var(--transition-default),
+      color var(--transition-default);
+  }
+
+  .site-nav__cta:hover,
+  .site-nav__cta:focus-visible {
+    background: var(--color-grey);
+    color: var(--color-black);
+  }
+}
