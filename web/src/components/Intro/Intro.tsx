@@ -1,19 +1,23 @@
-import React from 'react';
+import React from 'react'
 
 function Intro(props) {
-  const { backgroundImage, title, description } = props;
+  const { backgroundImage, title, description } = props
 
   return (
-    <div className="herocontainer">
-      <div className="heroimage">
-        <img src={backgroundImage} />
-      </div>
-      <div className="herotext" style={{ backgroundColor: 'black', color: 'white' }}>
+    <section className="intro">
+      {backgroundImage && (
+        <div className="intro__image">
+          <img src={backgroundImage} alt="" />
+        </div>
+      )}
+
+      <div className="intro__content">
         <h1>{title}</h1>
-        <p style={{ color: 'lightgray' }}>{description}</p>
+
+        <p>{description}</p>
       </div>
-    </div>
-  );
+    </section>
+  )
 }
 
-export default Intro;
+export default Intro

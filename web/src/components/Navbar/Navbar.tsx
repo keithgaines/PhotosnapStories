@@ -1,38 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Header: React.FC = () => {
-  return (
-    <header id="header">
-      <nav className="nav-bar">
-        <div className="header-logo"></div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <img src="../../../shared/desktop/logo.svg" alt='logo-black' className="header-logo-img" />
-          {/* <a className="navbar-brand" href="#">Navbar</a> */}
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
-            <ul className="navbar-nav me-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="/">HOME</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/stories">STORIES</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/features">FEATURES</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/pricing">PRICING</a>
-              </li>
-            </ul>
-            <div className="dark-button-wrap">
-              <button className="dark-button btn-dark">GET AN INVITE</button>
-            </div>
-          </div>
-        </nav>
+  return (
+    <header id="header" className="site-header">
+      <nav className="site-nav" aria-label="Primary navigation">
+        <a href="/" className="site-nav__logo-link" aria-label="Photosnap home">
+          <img
+            src="../../../shared/desktop/logo.svg"
+            alt=""
+            className="site-nav__logo"
+          />
+        </a>
+
+        <button
+          className="site-nav__toggle"
+          type="button"
+          aria-controls="primary-navigation"
+          aria-expanded={isMenuOpen}
+          aria-label="Toggle navigation"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <span className="site-nav__toggle-line" />
+        </button>
+
+        <div
+          className={`site-nav__menu ${isMenuOpen ? 'is-open' : ''}`}
+          id="primary-navigation"
+        >
+          <ul className="site-nav__links">
+            <li>
+              <a href="/" className="site-nav__link">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/stories" className="site-nav__link">
+                Stories
+              </a>
+            </li>
+            <li>
+              <a href="/features" className="site-nav__link">
+                Features
+              </a>
+            </li>
+            <li>
+              <a href="/pricing" className="site-nav__link">
+                Pricing
+              </a>
+            </li>
+          </ul>
+
+          <a href="/" className="site-nav__cta">
+            Get an invite
+          </a>
+        </div>
       </nav>
     </header>
   )

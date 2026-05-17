@@ -1,21 +1,33 @@
-import React from 'react';
+import React from 'react'
 
 const StoriesIntro: React.FC = () => {
   return (
-    <div>
-      <div className="heroimage">
-        <div className="introtext">
-          <p>Last month's featured story</p>
-          <h1>Hazy full moon of Appalachia</h1>
-          <p style={{ color: 'lightgray' }}>March 2nd 2020<span style={{ color: 'white' }}> by John Appleseed</span></p>
-          <br />
-          <p style={{ color: 'lightgray' }}>The dissected plateau area, while not actually made up of geological mountains,
-            is popularly called "mountains," especially in eastern Kentucky and West Virginia,
-            and while the ridges are not high, the terrain is extremely rugged.</p>
-          <h3>READ THE STORY</h3></div>
-        </div>
-      </div>
-  );
-};
+    <section className="stories-intro">
+      <div className="stories-intro__content">
+        <p className="stories-intro__eyebrow">
+          Last month&apos;s featured story
+        </p>
 
-export default StoriesIntro;
+        <h1>Hazy full moon of Appalachia</h1>
+
+        <p className="stories-intro__meta">
+          March 2nd 2020 <span>by John Appleseed</span>
+        </p>
+
+        <p className="stories-intro__description">
+          The dissected plateau area, while not actually made up of geological
+          mountains, is popularly called &quot;mountains,&quot; especially in
+          eastern Kentucky and West Virginia, and while the ridges are not high,
+          the terrain is extremely rugged.
+        </p>
+
+        <a className="stories-intro__link" href="/stories">
+          Read the story
+          <img src="/shared/desktop/arrow.svg" alt="" />
+        </a>
+      </div>
+    </section>
+  )
+}
+
+export default StoriesIntro

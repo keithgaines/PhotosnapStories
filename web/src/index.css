@@ -1,258 +1,335 @@
 @import url('https://fonts.googleapis.com/css?family=DM+Sans:400,700');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.intro {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.intro__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro__content {
+  display: grid;
+  align-content: center;
+  gap: var(--space-md);
+
+  padding: clamp(4rem, 8vw, 8rem) var(--container-padding);
+
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.intro__content p {
+  color: var(--color-text-muted-inverse);
+}
+
+@media (min-width: 768px) {
+  .intro {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* -------------------- Tokens -------------------- */
+
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-grey: #dfdfdf;
+  --color-light-grey: #f5f5f5;
+  --color-text-muted: rgb(0 0 0 / 60%);
+  --color-text-muted-inverse: rgb(255 255 255 / 60%);
+
+  --container-max: 1110px;
+  --container-padding: clamp(1.5rem, 5vw, 2.5rem);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  --font-family-base: 'DM Sans', sans-serif;
+
+  --font-size-body: 0.9375rem;
+  --font-size-eyebrow: 0.75rem;
+  --font-size-h1: clamp(2rem, 6vw, 3rem);
+  --font-size-h2: clamp(1.5rem, 4vw, 2.5rem);
+  --font-size-h3: 1.125rem;
+
+  --line-height-body: 1.65;
+  --line-height-heading: 1.15;
+
+  --letter-spacing-heading: 0.208rem;
+  --letter-spacing-eyebrow: 0.125rem;
+
+  --transition-default: 0.25s ease;
+}
+
+/* -------------------- Reset -------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;
-    overflow-x: hidden;
-    background: white;
-    color: black;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  background: var(--color-white);
+  color: var(--color-black);
+  text-rendering: optimizeLegibility;
 }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* -------------------- Typography -------------------- */
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: var(--line-height-heading);
+}
+
+h1,
+h2 {
+  letter-spacing: normal;
+  text-transform: none;
+}
 
 h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1.1;
-    font-weight: 700;
+  font-size: var(--font-size-h1);
 }
 
 h2 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    line-height: 1.2;
-    font-weight: 700;
+  font-size: var(--font-size-h2);
 }
 
 h3 {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: 1.4;
-    font-weight: 700;
+  font-size: var(--font-size-h3);
 }
 
 h4 {
-    font-size: 0.75rem;
-    line-height: 1.3;
-    font-weight: 700;
+  font-size: var(--font-size-eyebrow);
+  letter-spacing: var(--letter-spacing-eyebrow);
+  text-transform: uppercase;
 }
 
 p {
-    font-size: 1rem;
-    line-height: 1.7;
+  color: var(--color-text-muted);
 }
 
-/* =========================
-   LAYOUT
-========================= */
-
-#root {
-    width: 100%;
+.text-inverse p,
+p.text-inverse,
+.text-inverse {
+  color: var(--color-text-muted-inverse);
 }
 
-/* =========================
-   HERO / SECTION LAYOUTS
-========================= */
+/* -------------------- Shared layout primitives -------------------- */
 
-.herocontainer {
-    display: flex;
-    flex-direction: column;
+.page-section {
+  width: min(100% - (var(--container-padding) * 2), var(--container-max));
+  margin-inline: auto;
 }
 
-/* Shared section styling */
-
-.createandshare,
-.beautifulstories,
-.designedforeveryone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: clamp(2rem, 6vw, 6rem);
-
-    min-height: 450px;
-    width: 100%;
+.page-grid {
+  display: grid;
+  gap: var(--space-lg);
 }
 
-.section-content {
-    width: 100%;
-    max-width: 540px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.flow > * + * {
+  margin-top: var(--flow-space, var(--space-md));
 }
 
-/* =========================
-   IMAGES
-========================= */
-
-.heroimage,
-.desk,
-.manwithcamera {
-    width: 100%;
-    min-height: 320px;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cluster-gap, var(--space-md));
 }
 
-/* Mobile Images */
-
-.heroimage {
-    background-image: url(../public/home/mobile/create-and-share.jpg);
+.center {
+  display: grid;
+  place-items: center;
 }
 
-.desk {
-    background-image: url(../public/home/mobile/beautiful-stories.jpg);
+/* -------------------- Split layouts -------------------- */
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.manwithcamera {
-    background-image: url(../public/home/mobile/designed-for-everyone.jpg);
+.split-layout__content {
+  display: grid;
+  align-content: center;
+  gap: var(--space-md);
+  padding: clamp(4rem, 8vw, 8rem) var(--container-padding);
 }
 
-/* Hide unused img tags if present */
-
-.heroimage img,
-.desk img,
-.manwithcamera img {
-    display: none;
+.split-layout__content--dark {
+  background: var(--color-black);
+  color: var(--color-white);
 }
 
-/* =========================
-   ARROWS
-========================= */
-
-.arrowimage,
-.arrowimageinvert {
-    display: flex;
-    align-items: center;
+.split-layout__content--dark p {
+  color: var(--color-text-muted-inverse);
 }
 
-.arrowimage img,
-.arrowimageinvert img {
-    width: 24px;
-    height: 24px;
+.split-layout__image {
+  min-height: clamp(18rem, 60vw, 30rem);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.arrowimageinvert img {
-    filter: invert(1);
+.split-layout__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* =========================
-   FEATURES / INFO SECTION
-========================= */
+/* -------------------- Shared CTA -------------------- */
 
-.infosection {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-
-    padding: clamp(2rem, 6vw, 6rem);
+.beta-cta {
+  min-height: 17.5rem;
+  display: grid;
+  align-items: center;
+  padding: clamp(4rem, 8vw, 6rem) var(--container-padding);
+  color: var(--color-white);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
-    gap: 1.5rem;
+.beta-cta p {
+  color: var(--color-text-muted-inverse);
 }
 
-.blurb img {
-    max-width: 72px;
-    height: auto;
+/* -------------------- Links / actions -------------------- */
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: fit-content;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-eyebrow);
+  text-transform: uppercase;
+  transition: opacity var(--transition-default),
+    transform var(--transition-default);
 }
 
-.containerheader {
-    font-weight: 700;
+.text-link:hover,
+.text-link:focus-visible {
+  opacity: 0.7;
 }
 
-.containerbodytext {
-    max-width: 340px;
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding-inline: 1.5rem;
+  border: 1px solid transparent;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-eyebrow);
+  text-transform: uppercase;
+  transition: background-color var(--transition-default),
+    color var(--transition-default), border-color var(--transition-default);
 }
 
-/* =========================
-   TABLET
-========================= */
-
-@media screen and (min-width: 768px) {
-
-    .herocontainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    /* Alternate layout rows */
-
-    .heroimage {
-        grid-column: 2;
-        min-height: 650px;
-
-        background-image: url(../public/home/tablet/create-and-share.jpg);
-    }
-
-    .createandshare {
-        grid-column: 1;
-    }
-
-    .desk {
-        grid-column: 1;
-
-        background-image: url(../public/home/tablet/beautiful-stories.jpg);
-    }
-
-    .beautifulstories {
-        grid-column: 2;
-    }
-
-    .manwithcamera {
-        grid-column: 2;
-
-        background-image: url(../public/home/tablet/designed-for-everyone.jpg);
-    }
-
-    .designedforeveryone {
-        grid-column: 1;
-    }
-
-    .infosection {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.button-link:hover,
+.button-link:focus-visible {
+  background: var(--color-light-grey);
+  color: var(--color-black);
 }
 
-/* =========================
-   DESKTOP
-========================= */
+/* -------------------- Desktop -------------------- */
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 768px) {
+  .split-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-    .createandshare,
-    .beautifulstories,
-    .designedforeveryone {
-        min-height: 700px;
-        padding: clamp(4rem, 8vw, 8rem);
-    }
+  .split-layout--image-first .split-layout__image {
+    order: -1;
+  }
 
-    .heroimage {
-        background-image: url(../public/home/desktop/create-and-share.jpg);
-    }
+  .split-layout__content {
+    padding-inline: clamp(3rem, 6vw, 7rem);
+  }
+}
 
-    .desk {
-        background-image: url(../public/home/desktop/beautiful-stories.jpg);
-    }
-
-    .manwithcamera {
-        background-image: url(../public/home/desktop/designed-for-everyone.jpg);
-    }
-
-    .section-content {
-        max-width: 460px;
-    }
+@media (min-width: 1110px) {
+  .split-layout__content {
+    padding-inline: clamp(4rem, 7vw, 7rem);
+  }
 }

@@ -1,165 +1,194 @@
-import React, { useEffect } from 'react';
-import { Link, routes } from '@redwoodjs/router'
+import React, { useState } from 'react'
+
 import { MetaTags } from '@redwoodjs/web'
+
 import Intro from 'src/components/Intro/Intro'
 
-import '../../features.css'
-import '../../pricing.css'
+const plans = [
+  {
+    name: 'Basic',
+    description:
+      'Includes basic usage of our platform. Recommended for new and aspiring photographers.',
+    monthly: '$19.00',
+    yearly: '$190.00',
+    featured: false,
+  },
+  {
+    name: 'Pro',
+    description:
+      'More advanced features available. Recommended for photography veterans and professionals.',
+    monthly: '$39.00',
+    yearly: '$390.00',
+    featured: true,
+  },
+  {
+    name: 'Business',
+    description:
+      'Additional features available such as more detailed metrics. Recommended for business owners.',
+    monthly: '$99.00',
+    yearly: '$990.00',
+    featured: false,
+  },
+]
+
+const features = [
+  {
+    name: 'Unlimited Story Posting',
+    basic: true,
+    pro: true,
+    business: true,
+  },
+  {
+    name: 'Unlimited Photo Upload',
+    basic: true,
+    pro: true,
+    business: true,
+  },
+  {
+    name: 'Embedding Custom Content',
+    basic: false,
+    pro: true,
+    business: true,
+  },
+  {
+    name: 'Customize Metadata',
+    basic: false,
+    pro: true,
+    business: true,
+  },
+  {
+    name: 'Advanced Metrics',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+  {
+    name: 'Photo Downloads',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+  {
+    name: 'Search Engine',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+  {
+    name: 'Custom Analytics',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+]
 
 function Pricing() {
-  useEffect(() => {
-    var btn = document.getElementById('card-button-toggler');
-    var monthly = document.getElementById('monthly');
-    var yearly = document.getElementById('yearly');
-    var third_p = document.querySelectorAll('.price-card p:nth-child(3)');
-    var fourth_p = document.querySelectorAll('.price-card p:nth-child(4)');
-    var fifth_p = document.querySelectorAll('.price-card p:nth-child(5)');
-    var sixth_p = document.querySelectorAll('.price-card p:nth-child(6)');
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>(
+    'monthly'
+  )
 
-    function toggleActive() {
-      btn.classList.toggle('active');
-      monthly.classList.toggle('active');
-      yearly.classList.toggle('active');
-      third_p.forEach(function (this_p) {
-        this_p.classList.toggle('active');
-      });
-      fourth_p.forEach(function (this_p) {
-        this_p.classList.toggle('active');
-      });
-      fifth_p.forEach(function (this_p) {
-        this_p.classList.toggle('active');
-      });
-      sixth_p.forEach(function (this_p) {
-        this_p.classList.toggle('active');
-      });
-    }
-
-    btn.addEventListener('click', toggleActive);
-
-    return () => {
-      btn.removeEventListener('click', toggleActive);
-    };
-  }, []);
+  const isYearly = billingCycle === 'yearly'
 
   return (
     <>
       <MetaTags title="Pricing" description="Pricing page" />
+
       <Intro
-      title="Pricing"
-      description="reate your stories. Photosnap is a platform for photographers and visual storytellers. It’s the simple way to
-      create and share your photos." 
+        title="Pricing"
+        description="Create your stories. Photosnap is a platform for photographers and visual storytellers. It’s the simple way to create and share your photos."
       />
-      <div className="wrap-price">
-      <div className="button-price">
-        <p id="monthly" className="active">Monthly</p>
-        <div id="card-button-toggler" className="toggle-btn">
-          <div className="inner-circle"></div>
-        </div>
-        <p id="yearly" className="">Yearly</p>
-      </div>
-      <div className="prices-cards">
 
-        <div className="price-card">
-          <p>Basic</p>
-          <p>Includes basic usage of our platform. Recommended for new and aspiring photographers.</p>
-          <p className="">$19.00</p>
-          <p className="">per month</p>
-          <p className="">$190.00</p>
-          <p className="">per year</p>
-          <div className="card-button-div">
-            <button className="card-button">PICK PLAN</button>
+      <section className="pricing">
+        <div className="pricing-inner">
+          <div className="billing-toggle" aria-label="Billing cycle selector">
+            <p className={!isYearly ? 'active' : ''}>Monthly</p>
+
+            <button
+              type="button"
+              className={`toggle-btn ${isYearly ? 'active' : ''}`}
+              aria-label="Toggle yearly billing"
+              aria-pressed={isYearly}
+              onClick={() =>
+                setBillingCycle((current) =>
+                  current === 'monthly' ? 'yearly' : 'monthly'
+                )
+              }
+            >
+              <span className="inner-circle" />
+            </button>
+
+            <p className={isYearly ? 'active' : ''}>Yearly</p>
+          </div>
+
+          <div className="pricing-grid">
+            {plans.map((plan) => (
+              <article
+                key={plan.name}
+                className={`price-card ${
+                  plan.featured ? 'black-price-card' : ''
+                }`}
+              >
+                <div className="price-card__content">
+                  <h2 className="price-card__name">{plan.name}</h2>
+
+                  <p className="price-card__description">{plan.description}</p>
+                </div>
+
+                <div className="price-card__cost">
+                  <p className="price-card__price">
+                    {isYearly ? plan.yearly : plan.monthly}
+                  </p>
+
+                  <p className="price-card__billing">
+                    per {isYearly ? 'year' : 'month'}
+                  </p>
+                </div>
+
+                <div className="card-button-div">
+                  <button
+                    type="button"
+                    className={`card-button ${
+                      plan.featured ? 'card-white-button' : ''
+                    }`}
+                  >
+                    Pick Plan
+                  </button>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
+      </section>
 
-        <div className="price-card black-price-card">
-          <p>Pro</p>
-          <p>More advanced features available. Recommended for photography veterans and professionals.</p>
-          <p className="">$39.00</p>
-          <p className="">per month</p>
-          <p className="">$390.00</p>
-          <p className="">per year</p>
-          <div className="card-button-div">
-            <button className="card-button card-white-button">PICK PLAN</button>
+      <section className="compare">
+        <div className="compare-outer">
+          <h1>Compare</h1>
+
+          <div className="compare-table">
+            <div className="table-row">
+              <div className="col-desc table-col">The Features</div>
+              <div className="table-col">Basic</div>
+              <div className="table-col">Pro</div>
+              <div className="table-col">Business</div>
+            </div>
+
+            {features.map((feature) => (
+              <div className="table-row" key={feature.name}>
+                <div className="col-desc table-col">{feature.name}</div>
+                <div
+                  className={`table-col ${feature.basic ? 'checked' : ''}`}
+                />
+                <div className={`table-col ${feature.pro ? 'checked' : ''}`} />
+                <div
+                  className={`table-col ${feature.business ? 'checked' : ''}`}
+                />
+              </div>
+            ))}
           </div>
         </div>
-
-        <div className="price-card">
-          <p>Business</p>
-          <p>Additional features available such as more detailed metrics. Recommended for business owners.</p>
-          <p className="">$99.00</p>
-          <p className="">per month</p>
-          <p className="">$990.00</p>
-          <p className="">per year</p>
-          <div className="card-button-div">
-            <button className="card-button">PICK PLAN</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  <div className="compare">
-    <div className="compare-outer">
-      <h1>COMPARE</h1>
-      <div className="compare-table">
-        <div className="table-row">
-          <div className="col-desc table-col">THE FEATURES</div>
-          <div className="table-col">BASIC</div>
-          <div className="table-col">PRO</div>
-          <div className="table-col">BUSINESS</div>
-        </div>
-        <div className="table-row">
-          <div className="col-desc table-col">UNLIMITED STORY POSTING</div>
-          <div className="table-col checked"></div>
-          <div className="table-col checked"></div>
-          <div className="table-col checked"></div>
-        </div>
-        <div className="table-row">
-          <div className="col-desc table-col">UNLIMITED PHOTO UPLOAD</div>
-          <div className="table-col checked"></div>
-          <div className="table-col checked"></div>
-          <div className="table-col checked"></div>
-        </div>
-        <div className="table-row">
-          <div className="col-desc table-col">EMBEDDING CUSTOM CONTENT</div>
-          <div className="table-col"></div>
-          <div className="table-col checked"></div>
-          <div className="table-col checked"></div>
-        </div>
-        <div className="table-row">
-          <div className="col-desc table-col">CUSTOMIZE METADATA</div>
-          <div className="table-col"></div>
-          <div className="table-col checked"></div>
-          <div className="table-col checked"></div>
-        </div>
-        <div className="table-row">
-          <div className="col-desc table-col">ADVANCED METRICS</div>
-          <div className="table-col"></div>
-          <div className="table-col"></div>
-          <div className="table-col checked"></div>
-        </div>
-        <div className="table-row">
-          <div className="col-desc table-col">PHOTO DOWNLOADS</div>
-          <div className="table-col"></div>
-          <div className="table-col"></div>
-          <div className="table-col checked"></div>
-        </div>
-        <div className="table-row">
-          <div className="col-desc table-col">SEARCH ENGINE</div>
-          <div className="table-col"></div>
-          <div className="table-col"></div>
-          <div className="table-col checked"></div>
-        </div>
-        <div className="table-row">
-          <div className="col-desc table-col">CUSTOM ANALYTICS</div>
-          <div className="table-col"></div>
-          <div className="table-col"></div>
-          <div className="table-col checked"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+      </section>
     </>
   )
 }
 
-
-export default Pricing;
+export default Pricing

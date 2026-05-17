@@ -1,40 +1,52 @@
-import React from 'react';
+import React from 'react'
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Stories', href: '/stories' },
+  { label: 'Features', href: '/features' },
+  { label: 'Pricing', href: '/pricing' },
+]
+
+const socialLinks = [
+  { label: 'Facebook', href: '/', icon: '/shared/desktop/facebook.svg' },
+  { label: 'YouTube', href: '/', icon: '/shared/desktop/youtube.svg' },
+  { label: 'Twitter', href: '/', icon: '/shared/desktop/twitter.svg' },
+  { label: 'Pinterest', href: '/', icon: '/shared/desktop/pinterest.svg' },
+  { label: 'Instagram', href: '/', icon: '/shared/desktop/instagram.svg' },
+]
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="footerlogo">
-        <img src="/shared/desktop/logo.svg" alt='logo-white' className="header-logo-img" />
-        <div className="socialicons">
-          <span><img src="/shared/desktop/facebook.svg" alt="facebook icon" /></span>
-          <span><img src="/shared/desktop/youtube.svg" alt="youtube icon" /></span>
-          <span><img src="/shared/desktop/twitter.svg" alt="twitter icon" /></span>
-          <span><img src="/shared/desktop/pinterest.svg" alt="pinterest icon" /></span>
-          <span><img src="/shared/desktop/instagram.svg" alt="instagram icon" /></span>
+    <footer className="footer">
+      <div className="footer__inner">
+        <a className="footer__logo-link" href="/" aria-label="Photosnap home">
+          <img
+            className="footer__logo"
+            src="/shared/desktop/logo.svg"
+            alt="Photosnap"
+          />
+        </a>
+
+        <nav className="footer__nav" aria-label="Footer navigation">
+          <ul>
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="footer__socials" aria-label="Social links">
+          {socialLinks.map((social) => (
+            <a key={social.label} href={social.href} aria-label={social.label}>
+              <img src={social.icon} alt="" />
+            </a>
+          ))}
         </div>
       </div>
+    </footer>
+  )
+}
 
-      <div className="footerlinks">
-        <ul>
-          <a href="/">
-            <li>Home</li>
-          </a>
-          <a href="/stories">
-            <li>Stories</li>
-          </a>
-          <a href="/features">
-            <li>Features</li>
-          </a>
-          <a href="/pricing">
-            <li>Pricing</li>
-          </a>
-        </ul>
-      </div>
-      <div className="copyright">
-        <p>Copyright 2019. All Rights Reserved</p>
-      </div>
-    </div>
-  );
-};
-
-export default Footer;
+export default Footer

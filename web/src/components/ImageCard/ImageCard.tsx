@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
 interface ImageComponentProps {
-  date: string;
-  title: string;
-  artist: string;
-  backgroundImageSrc: string;
+  date: string
+  title: string
+  artist: string
+  backgroundImageSrc: string
 }
 
 const ImageComponentStories: React.FC<ImageComponentProps> = ({
@@ -13,28 +13,28 @@ const ImageComponentStories: React.FC<ImageComponentProps> = ({
   artist,
   backgroundImageSrc,
 }) => {
-  const wrapperStyle = {
-    backgroundImage: `url(${backgroundImageSrc})`,
-  };
-
   return (
-    <div className="image-wrapper" style={wrapperStyle}>
+    <article
+      className="image-wrapper"
+      style={{
+        backgroundImage: `url(${backgroundImageSrc})`,
+      }}
+    >
       <div className="image-info">
         <p>{date}</p>
-        <h3 className="image-title">{title}</h3>
-        <p className="image-artist"> by {artist}</p>
-      </div>
-      <hr />
-      <div className="image-body">
-        <p className="image-story">READ STORY</p>
-        <img
-          className="image-arrow"
-          src="/shared/desktop/arrow.svg"
-          alt="arrow"
-        />
-      </div>
-    </div>
-  );
-};
 
-export default ImageComponentStories;
+        <h3 className="image-title">{title}</h3>
+
+        <p className="image-artist">by {artist}</p>
+      </div>
+
+      <div className="image-body">
+        <p className="image-story">Read Story</p>
+
+        <img className="image-arrow" src="/shared/desktop/arrow.svg" alt="" />
+      </div>
+    </article>
+  )
+}
+
+export default ImageComponentStories
