@@ -2,5 +2,14 @@
   "framework": null,
   "installCommand": "corepack enable && corepack prepare yarn@3.5.0 --activate && yarn install --immutable",
   "buildCommand": "yarn rw deploy vercel",
-  "outputDirectory": "web/dist"
+  "outputDirectory": "web/dist",
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/200.html"
+    }
+  ]
 }
