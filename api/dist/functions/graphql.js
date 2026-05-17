@@ -27,20 +27,23 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var graphql_exports = {};
 __export(graphql_exports, {
+  __rw_graphqlOptions: () => __rw_graphqlOptions,
   handler: () => handler
 });
 module.exports = __toCommonJS(graphql_exports);
+var import_map = __toESM(require("@babel/runtime-corejs3/core-js/map"));
 var import_graphql_server = require("@redwoodjs/graphql-server");
 var directives_requireAuth_requireAuth = __toESM(require("../directives/requireAuth/requireAuth"));
 var directives_skipAuth_skipAuth = __toESM(require("../directives/skipAuth/skipAuth"));
 var import_db = require("../lib/db");
 var import_logger = require("../lib/logger");
+var import_store = require("@redwoodjs/context/dist/store");
 let directives = {};
 directives.requireAuth_requireAuth = directives_requireAuth_requireAuth;
 directives.skipAuth_skipAuth = directives_skipAuth_skipAuth;
 let sdls = {};
 let services = {};
-const handler = (0, import_graphql_server.createGraphQLHandler)({
+const __rw_graphqlOptions = {
   loggerConfig: {
     logger: import_logger.logger,
     options: {}
@@ -51,9 +54,18 @@ const handler = (0, import_graphql_server.createGraphQLHandler)({
   onException: () => {
     import_db.db.$disconnect();
   }
-});
+};
+const __rw_handler = (0, import_graphql_server.createGraphQLHandler)(__rw_graphqlOptions);
+const handler = (__rw_event, __rw__context) => {
+  const __rw_contextStore = (0, import_store.getAsyncStoreInstance)().getStore();
+  if (__rw_contextStore === void 0) {
+    return (0, import_store.getAsyncStoreInstance)().run(new import_map.default(), __rw_handler, __rw_event, __rw__context);
+  }
+  return __rw_handler(__rw_event, __rw__context);
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  __rw_graphqlOptions,
   handler
 });
 //# sourceMappingURL=graphql.js.map
