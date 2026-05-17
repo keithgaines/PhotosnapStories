@@ -1,5 +1,4 @@
 node_modules
-.yarn
 .pnp.*
 .redwood
 dist
@@ -7,3 +6,7 @@ web/dist
 api/dist
 .env
 .env.local
+
+.yarn/*
+!.yarn/releases/
+!.yarn/releases/yarn-3.5.0.cjs
