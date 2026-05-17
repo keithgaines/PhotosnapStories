@@ -1,0 +1,22 @@
+node_modules
+.pnp.*
+.redwood
+dist
+web/dist
+api/dist
+.env
+.env.local
+
+.yarn/*
+!.yarn/releases/
+!.yarn/releases/yarn-3.5.0.cjs
+node_modules
+
+# build artifacts
+node_modules/
+.redwood/
+web/dist/
+api/dist/
+.vercel/
+node_modules/
+node_modules/

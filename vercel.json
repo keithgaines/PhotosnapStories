@@ -1,5 +1,6 @@
 {
   "framework": null,
   "installCommand": "corepack enable && corepack prepare yarn@3.5.0 --activate && yarn install --immutable",
-  "buildCommand": "yarn rw build"
+  "buildCommand": "yarn rw deploy vercel",
+  "outputDirectory": "web/dist"
 }
