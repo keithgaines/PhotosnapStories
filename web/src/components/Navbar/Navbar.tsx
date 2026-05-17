@@ -8,8 +8,8 @@ const Header: React.FC = () => {
       <nav className="site-nav" aria-label="Primary navigation">
         <a href="/" className="site-nav__logo-link" aria-label="Photosnap home">
           <img
-            src="../../../shared/desktop/logo.svg"
-            alt=""
+            src="/shared/desktop/logo.svg"
+            alt="Photosnap"
             className="site-nav__logo"
           />
         </a>
