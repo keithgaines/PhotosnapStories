@@ -1,18 +1,24 @@
-import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
+// web/src/App.tsx
+import React from 'react'
+
+import { RedwoodProvider } from '@redwoodjs/web'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 
-import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
 
-
 const App = () => (
-  <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider titleTemplate="%PageTitle">
-      <RedwoodApolloProvider>
+  <RedwoodProvider
+    titleTemplate="%PageTitle"
+    children={
+      <RedwoodApolloProvider
+        graphQLClientConfig={{
+          uri: '/.redwood/functions/graphql',
+        }}
+      >
         <Routes />
       </RedwoodApolloProvider>
-    </RedwoodProvider>
-  </FatalErrorBoundary>
+    }
+  />
 )
 
 export default App

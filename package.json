@@ -5,14 +5,19 @@
     "web"
   ],
   "devDependencies": {
-    "@redwoodjs/core": "5.0.6"
+    "@redwoodjs/core": "7.7.4",
+    "@redwoodjs/vite": "7.7.4",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "prisma": "5.14.0",
+    "typescript": "^6.0.3"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
     "root": true
   },
   "engines": {
-    "node": "20.x",
+    "node": "24.x",
     "yarn": "3.x"
   },
   "packageManager": "yarn@3.5.0",
@@ -21,5 +26,10 @@
   },
   "scripts": {
     "vercel-build": "yarn rw deploy vercel"
+  },
+  "dependencies": {
+    "@prisma/client": "5.14.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   }
 }
