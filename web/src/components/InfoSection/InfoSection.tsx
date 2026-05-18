@@ -39,3 +39,4 @@ export const InfoSectionHome = () => {
     </section>
   )
 }
+export const InfoSectionFeatures = InfoSectionHome
