@@ -5,6 +5,18 @@
   grid-template-columns: 1fr;
 }
 
+.intro--full {
+  grid-template-columns: 1fr;
+}
+
+.intro--split {
+  grid-template-columns: 1fr;
+}
+
+.intro__image {
+  min-height: 18rem;
+}
+
 .intro__image img {
   width: 100%;
   height: 100%;
@@ -16,6 +28,7 @@
   align-content: center;
   gap: var(--space-md);
 
+  min-height: 22rem;
   padding: clamp(4rem, 8vw, 8rem) var(--container-padding);
 
   background: var(--color-black);
@@ -27,8 +40,12 @@
 }
 
 @media (min-width: 768px) {
-  .intro {
+  .intro--split {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .intro__image {
+    min-height: 30rem;
   }
 }
 /* -------------------- Tokens -------------------- */

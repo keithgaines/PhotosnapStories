@@ -3,9 +3,11 @@ import React from 'react'
 function Intro(props) {
   const { backgroundImage, title, description } = props
 
+  const hasImage = Boolean(backgroundImage)
+
   return (
-    <section className="intro">
-      {backgroundImage && (
+    <section className={`intro ${hasImage ? 'intro--split' : 'intro--full'}`}>
+      {hasImage && (
         <div className="intro__image">
           <img src={backgroundImage} alt="" />
         </div>
