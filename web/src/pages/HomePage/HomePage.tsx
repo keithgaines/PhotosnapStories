@@ -39,9 +39,6 @@ const HomePage = () => {
       <div className="headercontainer">
         <HeroSection />
       </div>
-
-      <InfoSectionHome />
-
       <div className="images">
         {imageData.map((image, index) => (
           <ImageComponent
