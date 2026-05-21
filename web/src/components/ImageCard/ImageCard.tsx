@@ -1,25 +1,20 @@
 import React from 'react'
 
-interface ImageComponentProps {
+type ImageComponentProps = {
   date: string
   title: string
   artist: string
-  backgroundImageSrc: string
+  imageClass: string
 }
 
 const ImageComponentStories: React.FC<ImageComponentProps> = ({
   date,
   title,
   artist,
-  backgroundImageSrc,
+  imageClass,
 }) => {
   return (
-    <article
-      className="image-wrapper"
-      style={{
-        backgroundImage: `url(${backgroundImageSrc})`,
-      }}
-    >
+    <article className={`image-wrapper ${imageClass}`}>
       <div className="image-info">
         <p>{date}</p>
 

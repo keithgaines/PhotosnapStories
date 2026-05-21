@@ -85,3 +85,141 @@
 
   filter: invert(1);
 }
+
+/* =========================
+   MOBILE IMAGES
+========================= */
+
+.image-card--mountains {
+  background-image: url('/stories/mobile/mountains.jpg');
+}
+
+.image-card--cityscapes {
+  background-image: url('/stories/mobile/cityscapes.jpg');
+}
+
+.image-card--voyage {
+  background-image: url('/stories/mobile/18-days-voyage.jpg');
+}
+
+.image-card--architecturals {
+  background-image: url('/stories/mobile/architecturals.jpg');
+}
+
+.image-card--world-tour {
+  background-image: url('/stories/mobile/world-tour.jpg');
+}
+
+.image-card--unforeseen-corners {
+  background-image: url('/stories/mobile/unforeseen-corners.jpg');
+}
+
+.image-card--king-on-africa {
+  background-image: url('/stories/mobile/king-on-africa.jpg');
+}
+
+.image-card--trip-to-nowhere {
+  background-image: url('/stories/mobile/trip-to-nowhere.jpg');
+}
+
+.image-card--rage-of-the-sea {
+  background-image: url('/stories/mobile/rage-of-the-sea.jpg');
+}
+
+.image-card--running-free {
+  background-image: url('/stories/mobile/running-free.jpg');
+}
+
+.image-card--behind-the-waves {
+  background-image: url('/stories/mobile/behind-the-waves.jpg');
+}
+
+.image-card--calm-waters {
+  background-image: url('/stories/mobile/calm-waters.jpg');
+}
+
+.image-card--milky-way {
+  background-image: url('/stories/mobile/milky-way.jpg');
+}
+
+.image-card--dark-forest {
+  background-image: url('/stories/mobile/dark-forest.jpg');
+}
+
+.image-card--somwarpet {
+  background-image: url('/stories/mobile/somwarpet.jpg');
+}
+
+.image-card--land-of-dreams {
+  background-image: url('/stories/mobile/land-of-dreams.jpg');
+}
+
+/* =========================
+   TABLET / DESKTOP IMAGES
+========================= */
+
+@media (min-width: 768px) {
+  .image-card--mountains {
+    background-image: url('/stories/desktop/mountains.jpg');
+  }
+
+  .image-card--cityscapes {
+    background-image: url('/stories/desktop/cityscapes.jpg');
+  }
+
+  .image-card--voyage {
+    background-image: url('/stories/desktop/18-days-voyage.jpg');
+  }
+
+  .image-card--architecturals {
+    background-image: url('/stories/desktop/architecturals.jpg');
+  }
+
+  .image-card--world-tour {
+    background-image: url('/stories/desktop/world-tour.jpg');
+  }
+
+  .image-card--unforeseen-corners {
+    background-image: url('/stories/desktop/unforeseen-corners.jpg');
+  }
+
+  .image-card--king-on-africa {
+    background-image: url('/stories/desktop/king-on-africa.jpg');
+  }
+
+  .image-card--trip-to-nowhere {
+    background-image: url('/stories/desktop/trip-to-nowhere.jpg');
+  }
+
+  .image-card--rage-of-the-sea {
+    background-image: url('/stories/desktop/rage-of-the-sea.jpg');
+  }
+
+  .image-card--running-free {
+    background-image: url('/stories/desktop/running-free.jpg');
+  }
+
+  .image-card--behind-the-waves {
+    background-image: url('/stories/desktop/behind-the-waves.jpg');
+  }
+
+  .image-card--calm-waters {
+    background-image: url('/stories/desktop/calm-waters.jpg');
+  }
+
+  .image-card--milky-way {
+    background-image: url('/stories/desktop/milky-way.jpg');
+  }
+
+  .image-card--dark-forest {
+    background-image: url('/stories/desktop/dark-forest.jpg');
+  }
+
+  .image-card--somwarpet {
+    background-image: url('/stories/desktop/somwarpet.jpg');
+  }
+
+  .image-card--land-of-dreams {
+    background-image: url('/stories/desktop/land-of-dreams.jpg');
+  }
+}
