@@ -41,11 +41,6 @@ const Header: React.FC = () => {
               </a>
             </li>
             <li>
-              <a href="/features" className="site-nav__link">
-                Features
-              </a>
-            </li>
-            <li>
               <a href="/pricing" className="site-nav__link">
                 Pricing
               </a>
