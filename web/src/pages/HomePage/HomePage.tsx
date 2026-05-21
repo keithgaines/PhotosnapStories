@@ -1,7 +1,6 @@
 import { MetaTags } from '@redwoodjs/web'
 
 import HeroSection from 'src/components/HeroSection/HeroSection'
-import { InfoSectionHome } from 'src/components/InfoSection/InfoSection'
 import ImageComponent from 'src/components/ImageCard/ImageCard'
 
 const imageData = [
