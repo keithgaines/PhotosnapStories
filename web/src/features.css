@@ -25,3 +25,63 @@
     background-image: url('/shared/desktop/bg-beta.jpg');
   }
 }
+
+.features-list {
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+.feature {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature img,
+.feature-icon {
+  width: auto;
+  height: 4.5rem;
+  margin-bottom: 2rem;
+}
+
+.feature h2 {
+  margin: 0 0 1rem;
+  font-size: 1.125rem;
+  line-height: 1.5625rem;
+  font-weight: 700;
+}
+
+.feature p {
+  margin: 0;
+  max-width: 21.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (min-width: 768px) {
+  .features-list {
+    padding: 7rem 9.75rem;
+    gap: 5rem;
+  }
+
+  .feature p {
+    max-width: 28.5625rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .features-list {
+    padding: 7.5rem 10.25rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6.5rem 1.875rem;
+  }
+
+  .feature img,
+  .feature-icon {
+    margin-bottom: 3rem;
+  }
+}
