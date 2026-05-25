@@ -160,10 +160,10 @@ yarn rw build
 
 ## Deployment
 
-The application is configured for deployment on [Vercel](https://vercel.com?utm_source=chatgpt.com) using RedwoodJS-compatible build settings and Vite optimization.
+The application is configured for deployment on [Vercel](https://vercel.com) using RedwoodJS-compatible build settings and Vite optimization.
 
 ---
 
 ## Repository
 
-[PhotosnapStories Repository](https://github.com/keithgaines/PhotosnapStories?utm_source=chatgpt.com)
+[PhotosnapStories Repository](https://github.com/keithgaines/PhotosnapStories)
