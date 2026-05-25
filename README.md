@@ -1,35 +1,169 @@
-# PhotoSnap - React and RedwoodJS Rebuild
-Welcome to the higher level rebuild of PhotoSnap! In this project, I have taken the original version I built and rebuilt it using modern technologies like React, RedwoodJS, and additional components. The aim was to create a more robust and feature-rich front end utilizing the power of React and TypeScript, while keeping the design constraints of the original challnge.
+# PhotosnapStories
 
-## Table of Contents
+Modern photography storytelling platform rebuilt with a production-oriented frontend architecture using React, RedwoodJS, TypeScript, and Vite.
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
+Designed to demonstrate scalable UI organization, reusable component structure, responsive layout systems, and modern deployment workflows commonly used in production web applications.
 
-## Introduction
+---
 
-This challenge was originally a Front End Mentor (https://www.frontendmentor.io/) challenge, but I built this version as a full stack web app hosted on Vercel. 
+## Architecture Overview
 
-## Features
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/1a434634-f689-4630-acb6-56a7cc507ee3" />
 
-The rebuild of PhotoSnap includes several new features and improvements over the original version. Some of the key features are:
 
-- **React and TypeScript**: The entire front end is built using React and TypeScript, enabling a more structured and type-safe development experience.
-- **RedwoodJS**: The project utilizes RedwoodJS, a full-stack JavaScript framework built on React and GraphQL, providing a powerful foundation for building scalable and maintainable applications.
-- **Responsive Design**: The application is fully responsive, ensuring seamless access and optimal viewing across various devices and screen sizes.
-- **Enhanced Performance**: Careful consideration has been given to optimize the performance of the application, ensuring fast load times and smooth interactions.
+---
 
-## Technologies Used
+## Project Overview
 
-The rebuild of PhotoSnap leverages a variety of technologies to deliver a powerful and engaging experience. The key technologies used in this project are:
+PhotosnapStories is a full-stack RedwoodJS application focused on responsive storytelling experiences for photography-driven content platforms.
 
-- **React**: A JavaScript library for building user interfaces, providing a flexible and efficient way to create interactive components.
-- **RedwoodJS**: A full-stack JavaScript framework built on React and GraphQL, simplifying the development of scalable and robust applications.
-- **TypeScript**: A typed superset of JavaScript, adding static types to enable enhanced code quality, maintainability, and developer productivity.
-- **GraphQL**: A query language for APIs, enabling efficient data fetching and providing a strongly-typed schema for better developer experience.
-- **CSS Modules**: A CSS approach that scopes styles to individual components, reducing conflicts and improving maintainability.
-- **Responsive Design**: Utilizing CSS media queries and responsive techniques to ensure optimal viewing across different devices and screen sizes.
+The project was modernized from an older Redwood implementation into a cleaner RedwoodJS 7 + Vite architecture with an emphasis on:
+
+* Frontend maintainability
+* Reusable component systems
+* Responsive design architecture
+* Production-style project organization
+* Deployment optimization for Vercel
+* Type-safe application structure
+
+The application demonstrates practical software engineering patterns used in modern React ecosystems while maintaining a polished marketing-style user experience.
+
+---
+
+## Technical Focus Areas
+
+### Frontend Architecture
+
+* React + TypeScript application structure
+* RedwoodJS 7 framework modernization
+* Component-driven UI organization
+* Route-level page separation
+* Shared layout architecture
+* Reusable styling systems
+* Responsive CSS refactoring
+* Vite-based build optimization
+
+### Engineering Improvements
+
+* Migrated legacy Redwood configuration to RedwoodJS 7.7.4
+* Refactored application structure for long-term maintainability
+* Resolved Vite compatibility and module-loading issues
+* Improved CSS architecture and asset organization
+* Standardized responsive layout behavior across pages
+* Optimized Vercel deployment workflow
+* Implemented cleaner separation between UI, layouts, and page logic
+
+### Deployment & Tooling
+
+* Vercel deployment pipeline
+* Yarn 3 workspace configuration
+* Vite bundling and optimization
+* Prisma ORM integration
+* RedwoodJS monorepo architecture
+* TypeScript-based development workflow
+
+---
+
+## System Design
+
+The application follows RedwoodJS’s full-stack monorepo structure:
+
+```text
+PhotosnapStories
+├── web/
+│   ├── pages/
+│   ├── components/
+│   ├── layouts/
+│   └── src/index.html
+│
+├── api/
+│   ├── db/
+│   └── src/
+│
+├── static/
+├── redwood.toml
+└── package.json
+```
+
+### Web Layer
+
+The frontend application is organized around reusable UI components and route-driven page composition.
+
+Responsibilities include:
+
+* Rendering responsive user interfaces
+* Shared layout management
+* Static asset delivery
+* Client-side interactions
+* Component composition
+
+### API Layer
+
+The API side provides RedwoodJS server functionality and Prisma integration for future backend expansion.
+
+Responsibilities include:
+
+* GraphQL support
+* Service-layer business logic
+* Database access abstraction
+* Prisma schema management
+* Seed data workflows
+
+---
+
+## Technology Stack
+
+| Category           | Technologies                      |
+| ------------------ | --------------------------------- |
+| Frontend           | React, TypeScript, RedwoodJS      |
+| Build Tooling      | Vite                              |
+| Backend Framework  | RedwoodJS API                     |
+| ORM                | Prisma                            |
+| Database           | PostgreSQL / SQLite (development) |
+| Deployment         | Vercel                            |
+| Package Management | Yarn 3                            |
+
+---
+
+## Key Engineering Takeaways
+
+This project demonstrates experience with:
+
+* Modern React application architecture
+* Frontend system refactoring
+* Full-stack JavaScript/TypeScript ecosystems
+* Build tooling migration and modernization
+* Responsive UI engineering
+* Production deployment workflows
+* Scalable component organization
+* Real-world troubleshooting and framework migration
+
+---
+
+## Local Development
+
+```bash
+python -m pip install --upgrade pip
+yarn install
+yarn rw dev
+```
+
+---
+
+## Build
+
+```bash
+yarn rw build
+```
+
+---
+
+## Deployment
+
+The application is configured for deployment on [Vercel](https://vercel.com?utm_source=chatgpt.com) using RedwoodJS-compatible build settings and Vite optimization.
+
+---
+
+## Repository
+
+[PhotosnapStories Repository](https://github.com/keithgaines/PhotosnapStories?utm_source=chatgpt.com)
